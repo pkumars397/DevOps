@@ -1,0 +1,22 @@
+# servers are staying running even servers are rebooted.
+>>services help to configure to run automatically any software.
+
+>>service httpd start >> start httpd
+
+>>systemctl start httpd >>newer way to manage services
+
+>>systemctl stop httpd >> stop httpd 
+>>systemctl status httpd >> check status of httpd 
+>>systemctl enable httpd > configure httpd to start at startup
+>>systemctl disable httpd > configure httpd to not start at startup
+
+#configure
+/etc/systemd/system/myapp.service
+#code 
+[Unit]
+Description=My app
+
+[Service]
+ExecStart=/usr/bin/python3 myapp.py
+
+>>systemctl daemon-reload >>let system know new service being configured.

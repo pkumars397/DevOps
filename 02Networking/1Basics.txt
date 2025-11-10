@@ -1,0 +1,22 @@
+## Switching ##
+>>connect two pc using switch 
+>>connect them to switch 
+>> ip link
+>>ip addr add 192.168.1.10/24 dev eth0
+
+## Gateway ##
+>> two network connection
+> router comes into picture
+
+>> route > command
+>> ip route add ip1 via ip2
+
+>>ping ip >> to talk
+
+## Key commands
+>>ip link ,list and modify the interfaces on the host
+>>ip addr , to see the ip address of interfaces
+>>ip addr add ip dev eth0 , to assign add ip address
+>>ip route , to view the routing table
+>>ip route add ip1 via ip2 ,to add enteries into routing table
+>>cat proc/sys/net/ipv4/ip_forward, if ip forwarding is enabled on host or not

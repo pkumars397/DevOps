@@ -1,0 +1,11 @@
+RPM(redhat package manager)
+
+>>rpm -i telnet.rpm >>install package
+>>rpm -e telnet >> uninstall package
+>>rpm -q telnet
+
+YUM
+>>yum install ansible >> install package (everything) uses rpm also
+>>yum repolist >> repos 
+
+>> yum remove ansible > uninstall a package

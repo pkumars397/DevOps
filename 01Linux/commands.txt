@@ -1,0 +1,35 @@
+>> echo $SHELL > tells the type of shell you are
+>> echo hi > to print something
+>> ls > list files and folders
+>> cd > change directory
+>> pwd > present working directory
+>> mkdir new >> create a new directory
+>> cd new;mkdir www;pwd > multiple commands 
+
+>> mkdir -p /tmp/asia/india/bang > directory in one go
+
+>> rm -p /tmp/asia/india/bang > remove directory
+>> cp -r my_dir1 /tmp/my_dir1 > copy directory into other
+
+##commands files
+>>touch new_file.txt
+>>cat > new_file.txt > then after content ,ctr + D 
+>>cat new_file.txt > shows content of file
+
+>>cp new_file.txt copy_file.txt > copy file
+>>mv new_file.txt sample.txt > rename file
+>>rm new_file.txt > remove file
+
+>> whoami >user
+>>id >more information about user
+>>su pks >> switch user 
+>>ssh pks@192.168.1.2 >> if accessing user using ssh 
+
+>>/root user is main user,no restriction
+>>sudo ls /root >> giving user root user 
+
+##download file ##
+>> curl url -O 
+>> wget url -O filename.txt 
+
+>>ls /etc/*release*/ >> os name

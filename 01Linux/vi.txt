@@ -1,0 +1,14 @@
+>> vi file.txt >> open editor
+>> command mode(esc) ,insert mode (i)
+
+>>move .. arrow keys
+>>delete .. x (char) dd(line)
+>>copy and paste .. yy(copy) p(paste)
+>>scroll up/down .. ctr + u (up) ctr + d (down)
+
+>> : ,command
+>> :w (save)
+>> :q (quit)
+>> :wq (save and quit)
+
+?? /of (finding words) ,press n for navigating

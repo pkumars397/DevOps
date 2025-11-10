@@ -1,0 +1,22 @@
+# two pcs 
+ip1 and ip2(db)
+
+>>ping ip2 ,will work
+
+>>ping db ,not work 
+
+>>cat >> /etc/hosts (into system 1)
+ip2 db 
+ip2 www.google.com
+
+>>dns server and local hosts,if configured on both place it will pick local then dns server
+
+cat >> /etc/resolv.conf >>>dns server
+
+#top level domain name
+.com >> commercial
+.org >> non profit org
+.edu >> educational
+
+#subdomain >> www maps apps mail 
+#root >> .
