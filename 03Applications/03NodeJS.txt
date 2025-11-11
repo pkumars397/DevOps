@@ -1,0 +1,12 @@
+>>Free ,OpenSource ,Cross platform
+
+##NPM
+>node package manager(when u install nodejs ,npm also installed)
+
+>npm install package 
+>package.json ,metadata of the package
+
+>npm install package -g ,install globally
+
+>Builtin Modules >> os ,fs,url
+>External modules >> express ,react 

@@ -1,0 +1,7 @@
+>>compiled languages > java ,c++
+>>interpreted languages > python 
+
+>>Java .Source Code .Compile. Run 
+>>Python .Code > Run (Byte code > Machine code)
+
+

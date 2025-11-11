@@ -1,0 +1,14 @@
+>>wget urlForJdk
+#JDK 
+>>set of tools for Develop(jdb) > Build(Javac) >Run (JRE)
+>>MyClass.java >MyClass.java>javac MyClass
+
+>>JAR(Java Archive) > combines many classes into one called package
+>jar cf MyApp.jar MyClass.class Service1.class 
+
+>>javadoc >> create doc for code
+>javadoc MyClass.java
+
+>>Build Tools 
+>Maven,ANT (Build steps >>compile> package>document)
+
