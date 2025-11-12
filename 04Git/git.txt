@@ -1,0 +1,37 @@
+#Log
+>git log --oneline
+
+#branch 
+>git branch new >create
+>git checkout new >switch
+>git checkout -b new >create and switch once
+>git branch =d new >delete a branch
+>git branch >list all branches
+
+#merge branch
+>checkout to branch on which u want to merge some branch
+>git checkout master
+>git merge feature 
+
+#remote origin
+>git remote add origin url 
+>git remote -v
+>git remote remove origin
+
+#push 
+>git push origin HEAD~1
+
+#fetching and pulling
+> git fetch origin master
+> git merge origin/master 
+
+>git pull origin master (combined)
+
+#merge conflict 
+>when more than one user updated same thing 
+>so we keep what we need 
+>git add .
+>git merge 
+
+#fork
+>taking copy of some repo into ur account and do changes and create pr
