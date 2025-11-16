@@ -1,0 +1,32 @@
+#CI/CD 
+>>CI > take code and packaging it up (gifts >> wrapping)
+
+>>running unit test ,integration test etc. missing any packages or any issues
+
+code >> packing it up >> deploy the code on some system (vms)
+
+CD>> once the code is packaged >> deploy
+
+#differences 
+continous delivery not same as continous deployment (code >> CI done >> deploy)
+
+continous delivery >> we have to press some button on system when deploying ..human intervention
+
+
+##Why Jenkins 
+>> there are many ci/cd tools free and paid ,but Jenkins is free 
+>>many plugins avalailbe.
+
+## Getting started Jenkins
+>>plugins >> to connect with other services
+
+>>follow jenkins site for installation 
+>>after installing,start jenkins
+>>sudo systemctl start jenkins 
+>>sudo systemctl status jenkins 
+>>sudo ufw allow 8080 >> allow firewall 
+>>sudo ufw status 
+>>open localhost:8080
+>>sudo cat pathForPassword
+
+>>install plugins and then bang jenkins opens up 

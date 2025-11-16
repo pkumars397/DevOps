@@ -1,0 +1,31 @@
+>If doing something ,then there must be something for doing that.
+
+>>JekinsFile >> Instructions ,it tells a pipeline ,what it should be doing.
+>>pointers to plugins
+
+#Code 
+pipeline{ >>the task you are going to do
+    agent any >>build agent
+
+    stages{ >> different steps in the pipeline
+        stage('Build'){
+            steps{
+                echo 'Buidling'
+            }
+        }
+        stage('Test'){
+            steps{ >>work to be done in this stage
+                echo 'Testing'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo 'Deploying'
+            }
+        }
+    }
+}
+
+#multiple stages pipeline 
+
+>Dev (jenkinsfile) >>Staging(jenkinsfile) >>Prod(jenkinsfile)

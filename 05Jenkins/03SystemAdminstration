@@ -1,0 +1,8 @@
+>>backup, restore ,monitor 
+
+>>which files to Backup 
+>$JENKINS_HOME 
+Configuration files   jobs(all ci/cd pipelines)
+(config.xml)
+
+>>thinbackup for backing up the jenkins files

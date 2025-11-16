@@ -1,0 +1,32 @@
+// pipeline{
+//     agent any
+
+//     stages{
+//         stage('Dev'){
+//             steps{
+//                 echo 'Hello, World!'
+//             }
+//         }
+//     }
+// }
+
+//Multi stage pipeline
+// (groovy lang ,similar to java)
+pipeline{
+    agent any
+
+    stages{
+        stage('Dev'){
+            steps{
+                //get some code from github repo
+                git 'https://github.com/your-repo/your-project.git'
+            }
+        }
+        stage('UAT'){
+            steps{
+                git 'https://github.com/your-repo/your-project.git'
+                sh 'go test ./...'
+            }
+        }
+    }   
+}
