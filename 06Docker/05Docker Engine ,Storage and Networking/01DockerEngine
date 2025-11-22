@@ -1,0 +1,29 @@
+>> Docker's arch.
+
+>Docker engine is simply a host with docker installed on it .
+
+>when installing docker engine 
+1.Docker CLI > command line interface of Docker
+2.RestAPI >interface to talk to deamon and provide instructions
+3.Docker deamon >bg process that manages docker object like images,con. ,volumes ,storage ,networks.
+
+>docker cli can work on other host also,with -H=remote-docker-engine:2375 
+
+# Containerzation 
+>docker uses namespaces for isolation,i.e ,process id,network,unix timesharing,mount
+
+# PID namespace (process id)
+
+Linux Start > PID1 
+>unique ,cann't be same 
+
+pid1 >> pid2 ,child container
+
+>all processes running on same host but separated into their own containers using namespace .
+
+## cgroups (cpu groups)
+
+>container can take all hardware resources available on host ,no limit for it.
+>but we can control that , 
+>docker run --cpus=0.5 ubuntu ,can only utilise 50 percentage of cpu.
+>docker run --memory=100m ubuntu, can take max of 100m of storage. 

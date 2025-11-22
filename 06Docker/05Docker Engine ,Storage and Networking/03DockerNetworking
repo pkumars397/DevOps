@@ -1,0 +1,23 @@
+# Networking in Docker 
+
+>Bridge ,docker run ubuntu
+>none ,docker run ubuntu --network=none
+>host ,docker run ubuntu --network=host
+
+## bridge network ,private internal network create by docker on host.internally ips ,i.e 172.17 ,can access each other using internal ip ,for outside world map port.
+
+## host network ,then can access outside or internal ,same port .
+
+## none ,isolated network not connected to any network ,so can't access outside.
+
+>> by default docker creates only one internal network in bridge network containers.
+
+>docker network create \ --driver bridge \ --subnet 182.18.0.0/16 custom-isolated-network . custom internal network.
+
+>>docker network ls >list all networks .
+
+>>docker inspect conID, networks key,ip add.
+
+## all containers on host ,a builtin dns server runs on 127.0.0.11 ,helps resolve each other using container name.
+
+>>create namespaces to create container and connect via virtual ethernet cable.

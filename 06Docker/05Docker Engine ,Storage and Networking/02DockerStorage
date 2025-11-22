@@ -1,0 +1,34 @@
+## Docker files system 
+> Docker how stores data and how it manages file systems of containers.
+
+>when u install docker engine ,it creates a folder ,/var/lib/docker 
+
+\\ images ,containers stored into it.
+
+\\ Layered Architecture ,each layer changes its cache it,if at some layer failour ,then again build will be continued from there.
+
+>> lets say have to make changes in source code only and remaining level same ,so it will continue building the image from layer4.
+
+        Layer1 Base layer
+        Layer2 change in apt packages
+        Layer3 change in pip packages
+        Layer4 source code 
+        Layer5 update enterypoint with flask command 
+when build this image,and run it creates a new layert6 container layer 
+
+>>we use same dockerfile for multiple containers with some changes ,but container creates a new source code copy in that container.
+
+# volumes
+>benifits,stores backup data on local host,if anything wrong happen to our container ,data is safe with us.
+> docker volume create data_volume 
+>docker run -v data_volume=/var/lib/docker/mysql mysql
+
+>docker run -v data_volume2=/var/lib/docker/mysql mysql (will create data_volume2 automatically)
+
+>docker run \ --mount type=bind, source=/data/mysql ,target=/var/lib/docker/mysql mysql 
+(same longer version)
+
+# storage driers 
+AUFS >>ubuntu storage drivers
+ZFS
+Overlay      
