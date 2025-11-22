@@ -1,0 +1,39 @@
+>>docker run redis ,will run the latest version of redis image.
+
+(Tags)
+>>docker run redis:4.0 ,will run the 4.0 version
+
+>>docker run redis, redis:latest version run 
+
+(Stdin)
+>>docker run myApp,if myApp is taking stdin ,still this doesn't gives enter
+
+>>docker run -i myApp ,now interative mode ,can enter.without console .
+
+>>docker run -it myApp ,now both.
+
+(port)
+
+>every container have an ip 
+
+>>docker run -p 80:5000 myApp
+>>docker run -p 81:5000 myApp
+
+(volume)
+
+Data(/var/lib/mysql) >>mysql container 
+any changes will refelect in container.
+
+>>docker stop 
+>>docker rm mysql 
+all data gone .for that we need to map on our host.
+
+>>docker run -v /opt/datadir:/var/lib/mysql mysql ,now on /opt/datadir 
+
+(inspect)
+more details about container in json format.
+
+>>docker inspect ubuntu.
+
+(container logs)
+>>docker logs containerIdorName

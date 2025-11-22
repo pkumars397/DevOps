@@ -1,0 +1,48 @@
+>>docker hub place for images 
+
+>>docker run centos(direct name ,when personal have to include the username also,pkumars/demoImg)
+..liberary >> main repo of images
+
+>>docker run -it centos bash ,it will keep it in docker container .
+
+>>docker run -d centos sleep 2000 >will run the container in bg,and sleep for 2000s then exit(coz nothing on it to run)
+>docker ps
+
+>>docker stop nameCon. Or Id ((stop the container))
+
+>>docker ps -a 
+
+(everything lies on disk space) 
+
+#free up disk space from stopped container 
+
+>>docker rm ConName or ConId 
+
+>>docker rm id1 id2  ... > multiple container(based with image) in one stop 
+
+
+#pulled images 
+>>docker images (pulled images)
+
+>>docker rmi imageName > will remove imageName 
+
+>you can't remove the image which is currently ,in some container on disk.so have to remove that container ,then delete image
+
+e.g . docker run centos 
+      docker rmi centos (will give error that image is being used)
+      docker rm ConId 
+      docker rmi centos(now it will remove because we removed the container from disk)
+
+#pull (just pull no run)
+>>docker pull ubuntu .. will pull the image and store it locally without running 
+
+#running command on particular container 
+
+>>docker run -d ubuntu sleep 100
+
+(its running in background)
+for running a command inside this container 
+
+>>docker ps 
+>>docker exec ConId cat /etc/*release* ,docker exec id then followed by command which u want to run on container.
+

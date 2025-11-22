@@ -1,0 +1,44 @@
+>> docker run > used to run a container from an image
+
+>>docker run nginx > run a image on host ,if image is not present it will pull the image down from docker hub
+
+>>docker ps >lists all running containers and some basic information about them.
+
+>>docker ps -a > list all running and stopped containers.with their ids and more.
+
+>>docker stop containerName or containerId > stop some container.
+
+>>docker rm containerName or Id >to remove the stopped container from memory.
+
+#images 
+
+>>docker images >> list of available images and sizes on our host 
+
+#rmi >remove images 
+>>docker rm imageName 
+
+#pull command 
+
+>>docker pull imageName >only pull image on our host ,will not run this.
+
+>>docker run ubuntu >if an image is not running any service the container exits after running image 
+
+>docker run ubuntu sleep 5 >> when container starts its runs sleep command ,when sleep exits ,contains also exits.
+
+#run command on a container 
+
+>docker ps -a 
+
+>docker exec distracted_mcclintock cat /etc/hosts 
+
+#run -attach and detach 
+
+#example 
+
+docker run kodekloud/simple-webapp
+
+>docker -d ........... >will run the container in background .
+>docker ps > to view running container. 
+
+attach again 
+>dockerr attach a034d

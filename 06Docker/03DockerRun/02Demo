@@ -1,0 +1,53 @@
+>>docker run ubuntu  cat /etc/*release* ,will run container and give version of ubuntu
+
+(tag)
+>>docker run ubuntu:17.04 cat /etc/*release*,will run ubuntu version 17.04
+first it will find that image available locally if not then will pull and run .
+
+--------
+>>docker run ubuntu sleep 15 ,application is just sleep command 
+will not come out before 15 sec.
+
+(detached mode)
+>>docker run -d ubuntu sleep 1500 
+(container will run in background ,come out of terminal)
+
+(attach mode)
+>>docker attach containerId,again will go into docker container running terminal
+
+>>docker run timer,
+>>docker run -d timer 
+>>docker ps 
+>>docker attach containerId
+(again will show in terminal)
+
+---------
+>>docker run jenkins
+(how to access the web ui)
+
+>>docker ps ,will show internal ip of jenkins container
+or
+>>docker inspect ConId 
+
+go to web and type ip:port ,will open ui
+
+externally access ...
+ip of docker host.
+
+>>docker run -p 8080:8080 jenkins 
+
+now can access. using system ip.
+
+(ip of container,within docker host) outside docker host cann't access
+(ip of dockerhost)
+
+-------
+(persisting data)
+
+>>mkdir my-jenkins-data
+
+>>docker run -p 8080:8080 -v /root/my-jenkins-data:/var/jenkins_home -u root jenkins
+
+(when again open container after stopping ,it will take data from local)
+
+----docker run --name prashant ubuntu,renaming the container.

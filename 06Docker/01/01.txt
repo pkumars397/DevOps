@@ -1,0 +1,17 @@
+Why Docker?
+>>due to issues with os and environment for different devs.
+
+>>With Docker we can run our app with libs and dependency in different container.
+>>Docker containers share underlying os kernal ,for linux kernal .all linux distributions can run.
+
+>>Hardware Infra. > OS > Docker > Container> App(libs and dep.),fast bootup
+>>VM >> Hypervisor >>VM >APP ,slow bootup 
+
+#Container vs Image
+>>Docker image >> package template plan (use to create one or more container)
+
+>>Developer and ops both work together ,and create docker image,this image can run on any host with docker on it. 
+
+#install Docker engine 
+>> using convinient script 
+>>go to docker hub and test some image ,check if its working perfectly or not.
