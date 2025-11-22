@@ -1,0 +1,72 @@
+>>app doceration.
+go to containerized a web app on flask framework 
+
+#how to create an image
+
+>os ubuntu
+>update apt repo
+>install dep. using apt
+>install py dep using pip
+>copy source code to /opt folder 
+>run the web servering using flask command
+
+
+create a Dockerfile..
+
+code ...
+
+Dockerfile
+FROM Ubuntu 
+
+RUN apt-get update 
+RUN apt-get install python 
+
+RUN pip install flask 
+RUN pip install flask-mysql 
+
+copy ./opt/source-code
+
+ENTERYPOINT FLASK_APP=/opt/source_code/app.py flask run 
+
+>>build ur image 
+
+>docker build Dockerfile -t mmumshad/my-custom-app (will create image locally)
+
+if you want to docker hub ..
+>docker push userid/my-custom-app 
+
+
+!Dockerfile > a text file written in specific format that docke can understand ,its an instrutiona and arguments format
+
+instructions>> RUN FROM COPY ,left side caps 
+
+arguments>> everything in right is arguments .. specific action while creating image.
+
+e.g ,
+FROM Ubuntu , what base os should be.every docker image must be based off of another image,either an OS or another image that was created.
+ 
+>all dockerfile starts with FROM instruction.
+
+>RUN command ,this instruction instruct docker to run a command on those base images. 
+
+>COPY path , to copy ur source code from local to docker image.
+
+>ENTERPOINT ,instruction that do allow us to specify a command that will be run when the image is run as a container.
+
+## Layer architecture 
+
+>base os 
+>changes in apt pack..
+>changes in pip pack..
+>source code 
+>updte enterpoint with flask command 
+
+>> docker history, to see the build of images info. 
+
+>all layer built are cached ,so that layered arch helps you restart Docker build from that particular layer or add new step .
+
+> if fails then re run ,docker build .will use cached layer.
+
+#### what can you containerize .
+
+>>can containerized ,browser ,curl ,spotify everything.

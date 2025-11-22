@@ -1,0 +1,125 @@
+## creating custom image 
+
+testing.
+>docker run -it ubuntu bash 
+will open in bash mode with input terminal 
+
+>apt-get update 
+
+>apt-get install -y python 
+
+>apt-get python-pip 
+
+>pip install flask 
+
+>pip install flask-mysql 
+
+>cat > /opt/app.py 
+source code 
+ctr+d
+
+>cd /opt
+
+>FLASK_APP=app.py flask run --host=0.0.0.0 
+
+>history ,will show commands history and note that.
+
+----------------------------------------
+creating Dockerfile 
+
+>mkdir my-simple-webapp
+>cd my-simple-webapp 
+>cat > Dockerfile
+FROM ubuntu 
+
+RUN apt-get update 
+RUN apt-get install -y python python-pip
+
+RUN pip install flask flask-mysql
+
+COPY app.py /opt/app.py,app.py on local and /opt/app.py on docker container
+
+ENTERYPOINT FLASK_APP=/opt/app.py flask run 
+
+ctr+c
+
+>>cat >app.py
+code ...
+
+>docker build . 
+
+(created a image now locally on dockerhost)
+
+(give a tag)
+>docker build . -t my-simple-webapp 
+
+>docker images ,now will reflect.
+
+>docker run my-simpple-webapp 
+(running app)
+
+>docker push my-simple-webapp 
+
+>docker build . -t userid/my-simple-webapp 
+
+>docker push userid/my-simple-webapp 
+
+>>docker login 
+>userid 
+>pass 
+
+>>docker push userid/my-simple-webapp
+
+###### Environment variables 
+
+>don't change app code ,move out of app code into environment variable 
+
+color=os.environ.get("APP_COLOR")
+
+>export APP_COLOR=blue; python app.py
+
+# env variables in docker 
+package into image 
+
+>docker run -e APP_COLOR=blue simple-webapp-color 
+>docker run -e APP_COLOR=green simple-webapp-color 
+
+# inspect 
+docker inspect containerName. 
+listed there.
+
+## Commands vs enterypoint 
+>container does not host a os, only task or app server.once task complete exit.
+
+>CMD ["bash"] ,run image in bash 
+
+>docker run ubuntu sleep 5 
+
+>when os image always run how we can do 
+
+>CMD command param 
+>CMD["command","param"]
+
+create an image of this ..
+>docker buld -t ubuntu-sleeper 
+
+
+>can override through command 
+
+>ENTERPOINT["sleep"]
+
+>docker run ubuntu-sleeper 10 ,,,command at startup ,sleep 10 
+>docker run ubuntu-sleeper  
+operant value missing
+
+FROM Ubuntu 
+ENTERYPOINT['sleep']
+CMD['5']
+
+,it will take default 5 
+>docker run ubuntu-sleeper ,no error default 5
+
+## override enterypoint
+docker run --enterypoint sleep2.0 ubuntu-sleeper 10 
+
+>command now ,docker run ubuntu-sleeper sleep2.0 10 
