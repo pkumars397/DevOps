@@ -1,0 +1,29 @@
+## POD using YAML.
+
+>>k8s uses YAML files for inputs of yaml files
+
+pod-definition.yml                |kind   version
+pod-definition.yml                |  POD: v1
+pod-definition.yml                |  Service: v1
+pod-definition.yml                |  ReplicaSet: apps/v1
+pod-definition.yml                |  Deployment: apps/v1
+pod-definition.yml                |
+-------
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
+
+spec:
+   containers: (list)
+    - name: nginx-container  .> dictionary.
+      image:nginx
+
+>> kubectl create -f pod-definition.yml ,create the pod 
+
+>> kubectl get pods
+
+>> kubectl describe pod myapp=pod,more details.
